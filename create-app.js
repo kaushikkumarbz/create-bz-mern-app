@@ -25,8 +25,7 @@ if (fs.existsSync(targetDir)) {
     console.log(`
 👉 Next steps:
   cd ${projectName}
-  cd frontend && npm install
-  cd ../backend && npm install
+  npm run dev
     `);
   } catch (err) {
     console.error("❌ Error:", err.message);
