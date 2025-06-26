@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/create-bz-mern-app.git"
+    "url": "https://github.com/kaushikkumarbz/create-bz-mern-app.git"
   },
-  "homepage": "https://github.com/your-username/create-bz-mern-app#readme",
+  "homepage": "https://github.com/kaushikkumarbz/create-bz-mern-app#readme",
   "bugs": {
-    "url": "https://github.com/your-username/create-bz-mern-app/issues"
+    "url": "https://github.com/kaushikkumarbz/create-bz-mern-app/issues"
   },
   "keywords": [
     "boilerplate",
