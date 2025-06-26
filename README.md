@@ -15,7 +15,7 @@ A modern fullstack boilerplate powered by:
 ## 📦 Usage
 
 ```bash
-npx create-bz-mern-app my-project
+npx create-bz-mern-app@latest my-project
 ```
 
 This will scaffold a fullstack MERN project with the following structure:
