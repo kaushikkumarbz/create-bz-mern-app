@@ -1,6 +1,6 @@
 {
   "name": "create-bz-mern-app",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI to scaffold a fullstack React + Node.js app with Google login and JWT auth",
   "main": "create-app.js",
   "bin": {
