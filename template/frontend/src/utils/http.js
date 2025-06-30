@@ -8,7 +8,7 @@ class Service {
   constructor() {
     this.domain = "";
     if (import.meta.env.VITE_BZENV === "development") {
-      this.domain = "http://localhost:3000";
+      this.domain = import.meta.env.VITE_DEV_PROXY;
     }
   }
 
