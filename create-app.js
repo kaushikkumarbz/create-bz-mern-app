@@ -21,9 +21,9 @@ const templateDir = path.join(__dirname, "template");
 
     await fs.copy(templateDir, targetDir);
     console.log(`✅ Template files copied to current directory!`);
+    console.log(`✅ Update the environment variables and you are ready to run the project!`);
     console.log(`
 👉 Next steps:
-  npm install
   npm run dev
     `);
   } catch (err) {
