@@ -8,15 +8,19 @@ const templateDir = path.join(__dirname, "template");
 
 (async () => {
   try {
-    await fs.copy(templateDir, targetDir, {
-      overwrite: false,
-      errorOnExist: false,
-      filter: (src, dest) => {
-        return !fs.existsSync(dest); // Only copy if destination doesn't exist
-      },
-    });
+    const templateFiles = await fs.readdir(templateDir);
 
-    console.log(`✅ Template files copied to current directory (skipped existing files).`);
+    for (const file of templateFiles) {
+      const destPath = path.join(targetDir, file);
+
+      if (fs.existsSync(destPath)) {
+        console.error(`❌ File or directory '${file}' already exists in the current directory`);
+        process.exit(1);
+      }
+    }
+
+    await fs.copy(templateDir, targetDir);
+    console.log(`✅ Template files copied to current directory!`);
     console.log(`
 👉 Next steps:
   npm install
