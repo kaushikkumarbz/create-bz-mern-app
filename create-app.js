@@ -3,28 +3,27 @@
 const fs = require("fs-extra");
 const path = require("path");
 
-const projectName = process.argv[2];
-
-if (!projectName) {
-  console.error("❌ Please provide a project name");
-  process.exit(1);
-}
-
-const targetDir = path.resolve(process.cwd(), projectName);
+const targetDir = process.cwd();
 const templateDir = path.join(__dirname, "template");
-
-if (fs.existsSync(targetDir)) {
-  console.error("❌ Directory already exists");
-  process.exit(1);
-}
 
 (async () => {
   try {
+    const templateFiles = await fs.readdir(templateDir);
+
+    for (const file of templateFiles) {
+      const destPath = path.join(targetDir, file);
+
+      if (fs.existsSync(destPath)) {
+        console.error(`❌ File or directory '${file}' already exists in the current directory`);
+        process.exit(1);
+      }
+    }
+
     await fs.copy(templateDir, targetDir);
-    console.log(`✅ Project '${projectName}' created successfully!`);
+    console.log(`✅ Template files copied to current directory!`);
     console.log(`
 👉 Next steps:
-  cd ${projectName}
+  npm install
   npm run dev
     `);
   } catch (err) {
