@@ -15,15 +15,14 @@ A modern fullstack boilerplate powered by:
 ## 📦 Usage
 
 ```bash
-npx create-bz-mern-app@latest my-project
+npx create-bz-mern-app@latest
 ```
 
 This will scaffold a fullstack MERN project with the following structure:
 
 ```
-my-project/
-├── frontend/      # Vite + React + Mantine
-└── backend/       # Node.js + Express + MongoDB
+frontend/      # Vite + React + Mantine
+backend/       # Node.js + Express + MongoDB
 ```
 
 ---
@@ -68,30 +67,6 @@ npm run build
 cd ../backend
 npm install
 npm start
-```
-
----
-
-## 📁 .env.example Files
-
-You can optionally include `.env.example` files in both folders for easier onboarding:
-
-### `frontend/.env.example`
-
-```env
-VITE_GOOGLE_CLIENT_ID=your_google_client_id
-VITE_BZENV=development
-VITE_DEV_PROXY=http://localhost:3000
-```
-
-### `backend/.env.example`
-
-```env
-MONGODB_URI=mongodb://localhost:27017/your-db
-PORT=3000
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-JWT_SECRET=your_secret
 ```
 
 ---
