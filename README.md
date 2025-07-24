@@ -8,31 +8,71 @@ A modern fullstack boilerplate powered by:
 
 - ⚛️ **Frontend**: Vite + React + Mantine  
 - 🔐 **Authentication**: Google Login + JWT  
-- 🌐 **Backend**: Node.js + Express + MongoDB (MERN Stack)
+- 🌐 **Backend**: Node.js + Express + MongoDB  
+
+## ⚙️ Full Setup Instructions
+
+### 🔹 Step 1: Create a Git Repository
+
+Create a [new GitHub repository](https://github.com/new) (e.g.):
+```
+https://github.com/kaushikkumarbz/url-shortener-dev-example
+```
+During repo creation, **select `.gitignore` → Node**.
 
 ---
 
-## 📦 Usage
+### 🔹 Step 2: Clone the Repository
+
+```bash
+git clone git@github.com:kaushikkumarbz/url-shortener-dev-example.git
+cd url-shortener-dev-example
+```
+
+---
+
+### 🔹 Step 3: Scaffold the Project
+
+Inside the cloned folder:
 
 ```bash
 npx create-bz-mern-app@latest
 ```
 
-This will scaffold a fullstack MERN project with the following structure:
+This will set up the following folder structure:
 
 ```
-frontend/      # Vite + React + Mantine
-backend/       # Node.js + Express + MongoDB
+url-shortener-dev-example/
+  ├── backend/
+  └── frontend/
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+### 🔹 Step 4: Configure `.gitignore` and `.env` Files
 
-### 1. Set Up Environment Variables
+By default, `.env` files are ignored. But for Vite frontend to work properly, you should:
+
+1. Open `.gitignore`
+2. Replace:
+   ```
+   .env
+   .env/*
+   ```
+   with:
+   ```
+   /backend/.env
+   ```
+
+✅ This allows:
+- ✅ `frontend/.env` to be committed (used by Vite)
+- 🔒 `backend/.env` to stay private (JWT, DB credentials)
+
+---
+
+### 🔹 Step 5: Setup Environment Variables
 
 #### 📁 `backend/.env`
-
 ```env
 MONGODB_URI=your_mongodb_connection_string
 PORT=3000
@@ -42,23 +82,32 @@ JWT_SECRET=your_secure_jwt_secret
 ```
 
 #### 📁 `frontend/.env`
-
 ```env
 VITE_GOOGLE_CLIENT_ID=your_google_client_id
-VITE_BZENV=development  # or "production"
+VITE_BZENV=development  # or production
 VITE_DEV_PROXY=http://localhost:3000
 ```
 
 ---
 
-### 2. Install Dependencies and Start App
+### 🔹 Step 6: Install Dependencies and Start
 
+Quick Start
+Start frontend and backend together from root:
+```bash
+npm run dev
+```
+
+# OR
+
+If you prefer running frontend and backend separately, follow the setup steps below.
 #### ➤ Frontend
 
 ```bash
 cd frontend
 npm install
 npm run build
+npm start
 ```
 
 #### ➤ Backend
@@ -68,9 +117,7 @@ cd ../backend
 npm install
 npm start
 ```
-
 ---
-
 
 ## 🛠️ Tech Stack
 
@@ -82,10 +129,10 @@ npm start
 
 ## 🙌 Contributing
 
-Feel free to fork and create PRs to improve the boilerplate.
+Feel free to fork and create PRs to improve the boilerplate!
 
 ---
 
 ## 📄 License
 
-MIT © 2025 Kaushikk
+MIT © 2025 [Kaushikk](https://github.com/kaushikkumarbz)
